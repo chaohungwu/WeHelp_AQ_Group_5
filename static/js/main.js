@@ -39,7 +39,7 @@ async function classifySites() {
 async function insertCountyIntoSelect() {
   const classifySitesData = await classifySites();
   let countySelect = document.getElementById("county");
-  countyData = Object.keys(classifySitesData);
+  let countyData = Object.keys(classifySitesData);
   countyData.forEach((county) => {
     let option = document.createElement("option");
     option.value = county;
@@ -73,7 +73,7 @@ async function InitSelects() {
 // get current site and re-render on change
 document.getElementById("county").addEventListener("change", async (e) => {
   const classifySitesData = await classifySites();
-  siteArr = classifySitesData[e.target.value];
+  let siteArr = classifySitesData[e.target.value];
   insertSitesIntoSelect(siteArr);
   currentSite = siteArr[0];
   initMain(currentSite);
