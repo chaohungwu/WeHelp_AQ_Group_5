@@ -26,7 +26,7 @@ async function get_history_AQ_data(AQ_class,currentSiteId){
 // 2. 將空品資料做格式整理
 async function AQ_data_format(AQ_class_list, currentSiteId){
     let AQ_data = await get_history_AQ_data(AQ_class,currentSiteId);
-    console.log(AQ_data)
+    // console.log(AQ_data)
     let date_list = [];
     let  value_list =[];
 

@@ -1,21 +1,19 @@
 function addScript(url) {
   let script_dom = document.createElement("script");
   script_dom.defer = true;
-  script_dom.type ="module";
   script_dom.setAttribute("src", url);
   document.querySelector("head").appendChild(script_dom);
 }
-addScript("./static/js/chart.js");
 
 import { showPollutantsBoard } from "./board.js";
-import chartRender from './chart.js';
-
 
 const apiKey = "b9e37fc7-b00e-4759-9315-95df2f1f918d";
 let currentSiteId = "12";
 let classifySitesData = {};
 
 import { renderMap } from "./alice_test.js";
+import chartRender from "./chart.js";
+
 initAll();
 
 async function initAll() {
