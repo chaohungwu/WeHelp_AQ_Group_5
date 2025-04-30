@@ -6,6 +6,7 @@ function addScript(url) {
 }
 
 addScript("./static/js/wu_test.js");
+addScript("./static/js/alice_test.js");
 
 const apiKey = "b9e37fc7-b00e-4759-9315-95df2f1f918d";
 let currentSite = "中山";
