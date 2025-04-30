@@ -6,15 +6,17 @@ function addScript(url) {
 }
 
 addScript("./static/js/wu_test.js");
-addScript("./static/js/alice_test.js");
 import { showPollutantsBoard } from "./board.js";
 
 const apiKey = "b9e37fc7-b00e-4759-9315-95df2f1f918d";
 let currentSiteId = "12";
+let classifySitesData = {};
+
+import { renderMap } from "./alice_test.js";
 initAll();
 
 async function initAll() {
-  const classifySitesData = await classifySites();
+  classifySitesData = await classifySites();
   insertCountyIntoSelect(classifySitesData);
   document.querySelector('select[name="county"]').value = "臺北市";
   let siteArr = classifySitesData["臺北市"];
@@ -24,14 +26,14 @@ async function initAll() {
   initMain(currentSiteId);
 
   document.getElementById("county").addEventListener("change", async (e) => {
-    let siteArr = classifySitesData[e.target.value];
+    siteArr = classifySitesData[e.target.value];
     insertSitesIntoSelect(siteArr);
-    let currentSiteId = siteArr[0].siteid;
+    currentSiteId = siteArr[0].siteid;
     // currentSiteId = findSiteIdByName(currentSite, classifySitesData);
     initMain(currentSiteId);
   });
   document.getElementById("site").addEventListener("change", async (e) => {
-    let currentSite = e.target.value;
+    const currentSite = e.target.value;
     currentSiteId = findSiteIdByName(currentSite, classifySitesData);
     initMain(currentSiteId);
   });
@@ -108,6 +110,14 @@ function findSiteIdByName(currentSite, classifySitesData) {
 // 這邊放需要使用 currentSiteId 渲染的功能
 function initMain(currentSiteId) {
   showPollutantsBoard(apiKey, currentSiteId);
-  // 例如：renderTable(currentSiteId)
-  // 例如：renderMap(currentSiteId)
+  renderMap(currentSiteId, (newId, newName, newCounty) => {
+    document.querySelector('select[name="county"]').value = newCounty;
+
+    const siteArr = classifySitesData[newCounty];
+    insertSitesIntoSelect(siteArr);
+
+    document.querySelector('select[name="site"]').value = newName;
+
+    initMain(newId);
+    });
 }
