@@ -7,6 +7,7 @@ function addScript(url) {
 
 addScript("./static/js/wu_test.js");
 addScript("./static/js/alice_test.js");
+import { showPollutantsBoard } from "./board.js";
 
 const apiKey = "b9e37fc7-b00e-4759-9315-95df2f1f918d";
 let currentSite = "中山";
@@ -87,6 +88,7 @@ document.getElementById("site").addEventListener("change", async (e) => {
 // // 這邊放需要使用 currentSite 渲染的功能
 async function initMain(currentSite) {
   console.log(currentSite);
+  showPollutantsBoard(apiKey, currentSite);
   // 例如：renderTable(currentSite)
   // 例如：renderMap(currentSite)
 }
