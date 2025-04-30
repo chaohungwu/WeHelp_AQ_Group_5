@@ -35,6 +35,34 @@ function renderPollutantsSum(aqiDataForSelectedSite) {
     aqiNumber.textContent = "暫無資料";
   } else {
     aqiNumber.textContent = aqiDataForSelectedSite.aqi;
+    if (aqiDataForSelectedSite.aqi < 51) {
+      aqiDiv.style.border = "5px solid rgb(190, 230, 200)";
+    } else if (
+      aqiDataForSelectedSite.aqi > 50 &&
+      aqiDataForSelectedSite.aqi < 101
+    ) {
+      aqiDiv.style.border = "5px solid rgb(240, 230, 120)";
+    } else if (
+      aqiDataForSelectedSite.aqi > 100 &&
+      aqiDataForSelectedSite.aqi < 151
+    ) {
+      aqiDiv.style.border = "5px solid rgb(240, 190, 110)";
+    } else if (
+      aqiDataForSelectedSite.aqi > 150 &&
+      aqiDataForSelectedSite.aqi < 201
+    ) {
+      aqiDiv.style.border = "5px solid rgb(230, 125, 60)";
+    } else if (
+      aqiDataForSelectedSite.aqi > 200 &&
+      aqiDataForSelectedSite.aqi < 301
+    ) {
+      aqiDiv.style.border = "5px solid rgb(150, 120, 180)";
+    } else if (
+      aqiDataForSelectedSite.aqi > 300 &&
+      aqiDataForSelectedSite.aqi < 501
+    ) {
+      aqiDiv.style.border = "5px solid rgb(150, 100, 0)";
+    }
   }
   status.textContent = aqiDataForSelectedSite.status;
   aqiDiv.appendChild(aqiTitle);
