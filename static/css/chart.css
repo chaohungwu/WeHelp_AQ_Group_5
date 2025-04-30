@@ -1,0 +1,23 @@
+
+.chart{
+	display: flex;
+	height:100%;
+	width: 100%;
+	border-radius:5px;
+	background-color: white;
+	box-shadow:  0.5px 0.5px 3px rgb(169, 169, 169);
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas_chart{
+    display: flex;
+    height: 90%;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
