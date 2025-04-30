@@ -6,12 +6,11 @@ async function getAllAqiData(apiKey) {
   return allAqiData;
 }
 
-export async function showPollutantsBoard(apiKey, currentSite) {
+export async function showPollutantsBoard(apiKey, currentSiteId) {
   let allAqiData = await getAllAqiData(apiKey);
   let aqiDataForSelectedSite = allAqiData.records.find(
-    (record) => record.sitename === currentSite
+    (record) => record.siteid == currentSiteId
   );
-  console.log(aqiDataForSelectedSite);
   renderPollutantsSum(aqiDataForSelectedSite);
   renderPollutantsTable(aqiDataForSelectedSite);
 }
@@ -32,7 +31,11 @@ function renderPollutantsSum(aqiDataForSelectedSite) {
   let aqiNumber = document.createElement("div");
   let status = document.createElement("div");
   aqiTitle.textContent = "空氣品質指標";
-  aqiNumber.textContent = aqiDataForSelectedSite.aqi;
+  if (aqiDataForSelectedSite.aqi == "" || aqiDataForSelectedSite.aqi == null) {
+    aqiNumber.textContent = "暫無資料";
+  } else {
+    aqiNumber.textContent = aqiDataForSelectedSite.aqi;
+  }
   status.textContent = aqiDataForSelectedSite.status;
   aqiDiv.appendChild(aqiTitle);
   aqiDiv.appendChild(aqiNumber);
