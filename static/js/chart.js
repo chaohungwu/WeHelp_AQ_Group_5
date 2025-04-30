@@ -4,6 +4,7 @@ const api_key = "f2ef5c18-3af9-4678-8223-b3cd919591e0";
 let AQ_class = 'pm10subindex,pm25subindex,cosubindex,no2subindex,so2subindex,aqi' //等等用點擊按鈕的來加入變數
 let AQ_class_list = ['pm10subindex','pm25subindex',"cosubindex","no2subindex","so2subindex","aqi"];
 let currentSite = "中山";
+let currentSiteId = "12";
 
 let myChart = null;
 let AQ_class_showText = {
@@ -21,7 +22,6 @@ async function get_history_AQ_data(AQ_class,currentSiteId){
     let AQ_data = await response.json();
     return AQ_data
 }
-
 
 // 2. 將空品資料做格式整理
 async function AQ_data_format(AQ_class_list, currentSiteId){
@@ -86,6 +86,7 @@ async function chartDomRender(){
 // 4. 繪製折線圖(資料label,空品資料)
 async function chartRender(currentSite){
     let output_data = await AQ_data_format(AQ_class_list, currentSite);
+    
 
     let Color = ["rgb(113, 59, 189)","rgb(59, 163, 189)","rgb(189, 133, 59)","rgb(59, 59, 189)","rgb(189, 59, 178)","rgb(10, 10, 10)"]
     let backgroundColor = ["rgba(113, 59, 189, 0.1)","rgba(59, 163, 189, 0.1)","rgba(189, 133, 59, 0.1)","rgba(59, 59, 189, 0.1)","rgba(189, 59, 178, 0.1)","rgba(10, 10, 10, 0.1)"]
