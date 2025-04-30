@@ -37,10 +37,9 @@
   div.aqi_div {
     margin: 10px auto;
     border-radius: 50%;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px -3px 5px rgb(255, 255, 255);
     width: 160px;
     height: 160px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,7 +62,7 @@
     grid-template-columns: 2fr 2fr 2fr;
     align-items: center;
     background-color: rgb(233, 233, 233);
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 5px 20px;
 
     div.board_content_pollutant_title {
@@ -101,5 +100,55 @@
     font-size: 16px;
     padding: 5px 20px;
     color: rgb(78, 78, 78);
+  }
+}
+
+@media (max-width: 1200px) {
+  #board_content_pollutants {
+    section {
+      div.board_content_pollutant_move,
+      div.board_content_pollutant_concentration {
+        flex-direction: column;
+      }
+    }
+  }
+}
+@media (max-width: 1085px) {
+  #board_content_pollutants {
+    section {
+      div.board_content_pollutant_move,
+      div.board_content_pollutant_concentration {
+        flex-direction: row;
+      }
+    }
+  }
+}
+@media (max-width: 590px) {
+  #board_content_pollutants {
+    section {
+      div.board_content_pollutant_move,
+      div.board_content_pollutant_concentration {
+        flex-direction: column;
+      }
+    }
+  }
+}
+@media (max-width: 485px) {
+  #board_content_pollutants {
+    section {
+      div.board_content_pollutant_title {
+        font-size: 14px;
+        div.pollutant_unit {
+          font-size: 12px;
+        }
+      }
+      div.board_content_pollutant_move,
+      div.board_content_pollutant_concentration {
+        font-size: 12px;
+        div.board_content_value {
+          font-size: 20px;
+        }
+      }
+    }
   }
 }
