@@ -239,29 +239,12 @@ async function chartRender(currentSite){
     }
 }
 
-// 更新站點資料時做圖表更換
-// async function chart_get_site(){
-//     // 換測站
-//     let site_select = document.getElementById('site');
-//     site_select.addEventListener('change', function (){
-//         currentSite = site_select.value;
-//         chartRender(currentSite)
-//     })
-
-//     // 換縣市
-//     let County_select = document.getElementById('county');
-//     County_select.addEventListener('change', function (){
-//         site_select = document.getElementById('site');
-//         let currentSite = site_select.value;
-//         chartRender(currentSite)
-//     })
-
-// }
-// chart_get_site()
 export default chartRender;
 
 
-
 // radio
-
+// async function AQ_class_radio(){
+//     let radio_group = document.createElement("div")
+//     document.querySelector(".controller").appendChild(radio_group)
+// }
 
