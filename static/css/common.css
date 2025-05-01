@@ -11,13 +11,14 @@ body {
 
   padding-left: 20px;
   box-sizing: border-box;
-  background-color: rgb(193, 218, 255);
+  background-color: #34A853;
   justify-content: start;
   align-items: center;
+  color: #ffffff;
 }
 .home_page_icon {
   height: 50;
-  width: 50px;
+  width: 35px;
   margin-right: 10px;
 }
 /* 網站內容 */
@@ -32,7 +33,7 @@ body {
   width: 100%;
   justify-content: center;
   flex-direction: column;
-  background-color: rgb(222, 241, 255);
+  background-color: #E6F4EA;
 }
 
 .AQ_data_dashboard_contain {
@@ -54,6 +55,7 @@ body {
   box-sizing: border-box;
   align-items: center;
   margin-top: 10px;
+  color: #666666;
 }
 
 .dashboard_content {
@@ -113,7 +115,7 @@ body {
   width: 100%;
   justify-content: center;
   flex-direction: column;
-  background-color: rgb(240, 249, 255);
+  background-color: #DFF1FE;
 }
 
 .AQ_data_chart_content {
@@ -124,7 +126,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-self: center;
-  background-color: rgb(240, 249, 255);
+  background-color: none;
   margin-bottom: 20px;
 }
 
@@ -168,9 +170,10 @@ body {
 
 .footer {
   display: flex;
-  background-color: rgb(128, 194, 255);
+  background-color: #88A5BB;
   justify-content: center;
   align-items: center;
+  color: #ffffff;
 }
 
 @media (max-width: 1180px) {

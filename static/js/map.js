@@ -1,5 +1,21 @@
-document.querySelector('.map_content').innerHTML =
-  `<div id="map" style="width:100%;height:100%"></div>`;
+document.querySelector('.map_content').innerHTML = `
+  <div class="map-wrapper" style="position:relative;width:100%;height:100%;">
+    <!-- 地圖本體 -->
+    <div id="map" style="width:100%;height:100%;"></div>
+
+    <!-- 🔽 AQI 圖例 Overlay -->
+    <div class="map-overlay"
+         style="position:absolute;
+                left:18px;
+                bottom:10px;
+                z-index:1000;
+                display:block;
+                pointer-events:none;">
+      <img src="./static/img/AQI_grade.svg"
+           alt="AQI 等級圖例"
+           style="width:140px;height:auto;">
+    </div>
+  </div>`;
 
 import { getColorByAQI } from './color.js';
 
