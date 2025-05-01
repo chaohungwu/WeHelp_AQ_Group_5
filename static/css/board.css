@@ -103,26 +103,6 @@
   }
 }
 
-@media (max-width: 1200px) {
-  #board_content_pollutants {
-    section {
-      div.board_content_pollutant_move,
-      div.board_content_pollutant_concentration {
-        flex-direction: column;
-      }
-    }
-  }
-}
-@media (max-width: 1085px) {
-  #board_content_pollutants {
-    section {
-      div.board_content_pollutant_move,
-      div.board_content_pollutant_concentration {
-        flex-direction: row;
-      }
-    }
-  }
-}
 @media (max-width: 590px) {
   #board_content_pollutants {
     section {
