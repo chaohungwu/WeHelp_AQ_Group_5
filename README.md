@@ -4,10 +4,12 @@
 ## 主題：Wehelp 空氣品質監測網
 ## Host Repository： https://github.com/chaohungwu/WeHelp_AQ_Group_5
 ## 成果連結： https://chaohungwu.github.io/WeHelp_AQ_Group_5/
+<br>
 
 ## 核心特點：
 ### 1. 即時的多項空氣品質API數據
 ### 2. 互動式的GIS地圖、儀表版與圖表
+<br>
 
 ## 技術特點：
 ### 1. 互動式功能 (地圖、儀表板、圖表功能串聯)
@@ -15,7 +17,6 @@
 ### 3. 圖表：chart.js
 ### 4. RWD設計
 ### 5. 環境部多API介接
-<br>
 <br>
 
 ## 分工說明：  
