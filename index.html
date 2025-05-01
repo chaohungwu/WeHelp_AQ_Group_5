@@ -1,85 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Wehelp 第五組-空氣品質</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wehelp 空氣品質監測網</title>
 
-	<!-- 建立整體樣式指導：基礎字型、字體、基底色、標題、段落樣式等等 -->
-	<link rel="stylesheet" type="text/css" href="./static/css/common.css" />
-
-	<!-- chart.js 套件引入 -->
-	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-	<!-- 各區塊功能的JS引入 -->
-    <script defer src="./static/js/main.js"> </script>
-
-</head>
-
-<body>
+    <!-- 建立整體樣式指導：基礎字型、字體、基底色、標題、段落樣式等等 -->
+    <link rel="stylesheet" type="text/css" href="./static/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./static/css/board.css" />
+    <link rel="stylesheet" type="text/css" href="./static/css/map.css" />
+    <link rel="stylesheet" type="text/css" href="./static/css/chart.css" />
 
 
-<div class="contain">
-
-	<div class="nav_bar">
-		第五組空氣品質
-	</div>
-
-	<div class="wapper">
-
-		<div class="data_contain">
-			<div class="AQ_data_dashboard_contain">
-				<div class="title_content">全國空氣品質即時監測</div>
-
-				<div class="dashboard_content">
-
-					<div class="dashboard_left_content">
-						<div class="dashboard_left_content_map">
-							<div class="map_content">這邊是地圖</div>
-						</div>
-					</div>
-
-					<div class="dashboard_right_content">
-						<div class="dashboard_right_content_board">
-							<div class="board_content">這邊是儀錶板</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-		<div class="chart_contain">
-			<div class="AQ_data_chart_content">
-				<div class="title_content">全國空氣品質歷史監測資訊</div>
-				<div class="history_content">
-					<div class='history_controller_content'>
-						<div class="controller"></div>
-					</div>
-					<div class='history_chart_content'>
-						<div class="chart"></div>
-					</div>
-
-				</div>
-			</div>
-		</div>
+	<!-- leaflet.js 套件引入 -->
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
 
-	</div>
+    <!-- chart.js 套件引入 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <!-- 各區塊功能的JS引入 -->
+    <script type="module" defer src="./static/js/main.js"></script>
+  </head>
 
-	<footer class="footer">
+  <body>
+    <div class="contain">
+      <div class="nav_bar">
+        <img class="home_page_icon" src="./static/img/air-quality-sensor.png">
+        <span>Wehelp 空氣品質監測網</span>
+      </div>
+
+      <div class="wapper">
+        <div class="data_contain">
+          <div class="AQ_data_dashboard_contain">
+            <div class="title_content">
+              <img class="home_page_icon" src="./static/img/metering.png">
+              <span>全國空氣品質即時監測</span>
+            </div>
+
+            <div class="dashboard_content">
+              <div class="dashboard_left_content">
+                <div class="dashboard_left_content_map">
+                  <div class="map_content"></div>
+                </div>
+              </div>
+
+              <div class="dashboard_right_content">
+                <div class="dashboard_right_content_board">
+                  <section id="board_content_menu">
+                    <div id="board_content_county_menu">
+                      <label for="county">縣市：</label>
+                      <select name="county" id="county"></select>
+                    </div>
+                    <div id="board_content_site_menu">
+                      <label for="site">監測站：</label>
+                      <select name="site" id="site"></select>
+                    </div>
+                  </section>
+                  <section id="board_content_site_sum"></section>
+                  <section id="board_content_pollutants"></section>
+                  <template id="board_content_pollutant_template">
+                    <section>
+                      <div class="board_content_pollutant_title"></div>
+                      <div class="board_content_pollutant_move">
+                        <div class="board_content_value"></div>
+                        <div class="board_content_measuring"></div>
+                      </div>
+                      <div class="board_content_pollutant_concentration">
+                        <div class="board_content_value"></div>
+                        <div class="board_content_measuring">小時濃度</div>
+                      </div>
+                    </section>
+                  </template>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart_contain">
+          <div class="AQ_data_chart_content">
+            <div class="title_content">
+              <img class="home_page_icon" src="./static/img/clipboard.png">
+              <span>全國空氣品質歷史監測資訊 (7日前歷史資料)</span>
+            </div>
+            <div class="history_content">
+              <!-- <div class="history_controller_content">
+                <div class="controller"></div>
+              </div> -->
+              <div class="history_chart_content">
+                <div class="chart"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
         <p>COPYRIGHT © WeHelp 第五組 空氣品質監測</p>
-	</footer>
-
-
-</div>
-
-
-
-
-
-
-</body>
+      </footer>
+    </div>
+  </body>
 </html>
