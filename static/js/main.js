@@ -11,7 +11,7 @@ const apiKey = "b9e37fc7-b00e-4759-9315-95df2f1f918d";
 let currentSiteId = "12";
 let classifySitesData = {};
 
-import { renderMap } from "./alice_test.js";
+import { renderMap } from "./map.js";
 import chartRender from "./chart.js";
 
 initAll();
@@ -111,15 +111,22 @@ function findSiteIdByName(currentSite, classifySitesData) {
 // 這邊放需要使用 currentSiteId 渲染的功能
 function initMain(currentSiteId) {
   showPollutantsBoard(apiKey, currentSiteId);
-  renderMap(currentSiteId, (newId, newName, newCounty) => {
-    document.querySelector('select[name="county"]').value = newCounty;
-
-    const siteArr = classifySitesData[newCounty];
-    insertSitesIntoSelect(siteArr);
-
-    document.querySelector('select[name="site"]').value = newName;
-
-    initMain(newId);
-    });
+  renderMap(currentSiteId, handleMarkerClick);
   chartRender(currentSiteId)
 }
+  
+// 點擊地圖座標後更新下拉式選單
+function handleMarkerClick(id, name, county){
+    // 更新縣市
+    document.querySelector('select[name="county"]').value = county;
+  
+    // 更新測站選單
+    const sites = classifySitesData[county];
+    insertSitesIntoSelect(sites);
+    document.querySelector('select[name="site"]').value = name;
+  
+    currentSiteId = id;
+
+    // 重新渲染地圖
+    initMain(currentSiteId);
+  }
