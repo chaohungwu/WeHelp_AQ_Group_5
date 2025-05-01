@@ -106,27 +106,25 @@ function findSiteIdByName(currentSite, classifySitesData) {
   return null;
 }
 
-// 這邊要放地圖上點點的 onclick 事件，觸發initMain() 重新渲染大家的程式碼
-
 // 這邊放需要使用 currentSiteId 渲染的功能
 function initMain(currentSiteId) {
   showPollutantsBoard(apiKey, currentSiteId);
   renderMap(currentSiteId, handleMarkerClick);
-  chartRender(currentSiteId)
+  chartRender(currentSiteId);
 }
-  
-// 點擊地圖座標後更新下拉式選單
-function handleMarkerClick(id, name, county){
-    // 更新縣市
-    document.querySelector('select[name="county"]').value = county;
-  
-    // 更新測站選單
-    const sites = classifySitesData[county];
-    insertSitesIntoSelect(sites);
-    document.querySelector('select[name="site"]').value = name;
-  
-    currentSiteId = id;
 
-    // 重新渲染地圖
-    initMain(currentSiteId);
-  }
+// 點擊地圖座標後更新下拉式選單
+function handleMarkerClick(id, name, county) {
+  // 更新縣市
+  document.querySelector('select[name="county"]').value = county;
+
+  // 更新測站選單
+  const sites = classifySitesData[county];
+  insertSitesIntoSelect(sites);
+  document.querySelector('select[name="site"]').value = name;
+
+  currentSiteId = id;
+
+  // 重新渲染地圖
+  initMain(currentSiteId);
+}

@@ -2,6 +2,7 @@ body {
   padding: 0;
   margin: 0;
   font-size: 20px;
+  font-family: "Baloo 2", sans-serif;
 }
 /* 標題導覽列 */
 .nav_bar {
@@ -14,10 +15,10 @@ body {
   justify-content: start;
   align-items: center;
 }
-.home_page_icon{
-	height: 50;
-	width: 50px;
-	margin-right: 10px;
+.home_page_icon {
+  height: 50;
+  width: 50px;
+  margin-right: 10px;
 }
 /* 網站內容 */
 .wapper {
@@ -172,7 +173,7 @@ body {
   align-items: center;
 }
 
-@media (max-width: 1085px) {
+@media (max-width: 1180px) {
   .dashboard_content {
     flex-direction: column;
   }
