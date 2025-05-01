@@ -115,13 +115,15 @@ async function chartRender(currentSiteId){
                     display: true,
                     text: 'Date',
                     font: {
-                        size: 12
+                        family: "'Baloo 2', sans-serif",
+                        size: 14
                     }
                 },
                 
                 ticks: {
                     font: {
-                        size: 10
+                        family: "'Baloo 2', sans-serif",
+                        size: 12
                     }
                 },
                 grid: {
@@ -134,12 +136,14 @@ async function chartRender(currentSiteId){
                     display: true,
                     text: 'ppb',
                     font: {
-                        size: 12
+                        family: "'Baloo 2', sans-serif",
+                        size: 14
                     }
                 },
                 ticks: {
                     font: {
-                        size: 10
+                        family: "'Baloo 2', sans-serif",
+                        size: 12
                     }
                 },
                 position: 'left',
@@ -152,12 +156,14 @@ async function chartRender(currentSiteId){
                     display: true,
                     text: 'μg/m3',
                     font: {
-                        size: 12
+                        family: "'Baloo 2', sans-serif",
+                        size: 14
                     }
                 },
                 ticks: {
                     font: {
-                        size: 10
+                        family: "'Baloo 2', sans-serif",
+                        size: 12
                     }
                 },
                 grid: {
@@ -173,6 +179,7 @@ async function chartRender(currentSiteId){
                 display: false,
                 text: '折線圖',
                 font: {
+                    family: "'Baloo 2', sans-serif",
                     size: 16
                 }
             },
@@ -182,15 +189,19 @@ async function chartRender(currentSiteId){
             legend: {
                 labels: {
                     font: {
-                        size: 14
+                        family: "'Baloo 2', sans-serif",
+                        // weight:"bold",
+                        size: 12
                     }
                 }
             },
             tooltip: {
                 bodyFont: {
+                    family: "'Baloo 2', sans-serif",
                     size: 12
                 },
                 titleFont: {
+                    family: "'Baloo 2', sans-serif",
                     size: 12
                 },
                 xAlign: 'center',
@@ -199,7 +210,7 @@ async function chartRender(currentSiteId){
             },
         },
         font:{
-            family: "'Noto Sans TC', sans-serif",
+            family: "'Baloo 2', sans-serif",
         },
         elements: {
             
