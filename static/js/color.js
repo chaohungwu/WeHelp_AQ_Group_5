@@ -1,6 +1,5 @@
 export function getColorByAQI(aqi) {
   const res = { iconUrlDefault: "", iconUrlSelected: "", color: "" };
-
   if (aqi <= 50) {
     res.iconUrlDefault = "./static/img/green_default.png";
     res.iconUrlSelected = "./static/img/green_selected.png";

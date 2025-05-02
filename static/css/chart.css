@@ -3,7 +3,7 @@
 	display: flex;
 	height:90%;
 	width: 100%;
-	border-radius:5px;
+	border-radius:48px;
 	background-color: white;
 	box-shadow:  0.5px 0.5px 3px rgb(169, 169, 169);
     justify-content: space-between;
@@ -66,6 +66,7 @@
     width: 120px;
     height: 40px;
     background-color: rgb(222, 241, 255);
+    color: #666666;
     justify-content: center;
     align-items: center;
 
