@@ -127,9 +127,15 @@ function renderPollutantsTable(aqiDataForSelectedSite) {
     let concentrationValueDiv = concentration.querySelector(
       ".board_content_value"
     );
-    concentrationValueDiv.textContent =
-      aqiDataForSelectedSite[concentrationValue];
-
+    if (
+      aqiDataForSelectedSite[concentrationValue] == null ||
+      aqiDataForSelectedSite[concentrationValue] == ""
+    ) {
+      concentrationValueDiv.textContent = "N/A";
+    } else {
+      concentrationValueDiv.textContent =
+        aqiDataForSelectedSite[concentrationValue];
+    }
     pollutantsBoardSection.appendChild(section);
   });
 
